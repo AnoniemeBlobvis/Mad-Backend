@@ -54,7 +54,7 @@ The `npm run` command will list all of the scripts available to run for this pro
 
 JHipster ships with PWA (Progressive Web App) support, and it's turned off by default. One of the main components of a PWA is a service worker.
 
-The service worker initialization code is disabled by default. To enable it, uncomment the following code in `src/main/webapp/app/app.config.ts`:
+The service worker initialization code is disabled by default. To enable it, uncomment the following code in `src/main/webapp/app/app.module.ts`:
 
 ```typescript
 ServiceWorkerModule.register('ngsw-worker.js', { enabled: false }),
@@ -75,7 +75,7 @@ npm install --save-dev --save-exact @types/leaflet
 ```
 
 Then you would import the JS and CSS files specified in library's installation instructions so that [Webpack][] knows about them:
-Edit [src/main/webapp/app/app.config.ts](src/main/webapp/app/app.config.ts) file:
+Edit [src/main/webapp/app/app.module.ts](src/main/webapp/app/app.module.ts) file:
 
 ```
 import 'leaflet/dist/leaflet.js';
@@ -106,7 +106,7 @@ will generate few files:
 ```
 create src/main/webapp/app/my-component/my-component.component.html
 create src/main/webapp/app/my-component/my-component.component.ts
-update src/main/webapp/app/app.config.ts
+update src/main/webapp/app/app.module.ts
 ```
 
 ## Building for production
@@ -203,16 +203,16 @@ For more information, refer to the [Code quality page][].
 
 You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the [src/main/docker](src/main/docker) folder to launch required third party services.
 
-For example, to start a mysql database in a docker container, run:
+For example, to start a postgresql database in a docker container, run:
 
 ```
-docker compose -f src/main/docker/mysql.yml up -d
+docker compose -f src/main/docker/postgresql.yml up -d
 ```
 
 To stop it and remove the container, run:
 
 ```
-docker compose -f src/main/docker/mysql.yml down
+docker compose -f src/main/docker/postgresql.yml down
 ```
 
 You can also fully dockerize your application and all the services that it depends on.

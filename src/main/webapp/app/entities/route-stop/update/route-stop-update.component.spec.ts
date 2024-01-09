@@ -54,10 +54,10 @@ describe('RouteStop Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Route query and add missing value', () => {
       const routeStop: IRouteStop = { id: 456 };
-      const route: IRoute = { id: 18688 };
+      const route: IRoute = { id: 720 };
       routeStop.route = route;
 
-      const routeCollection: IRoute[] = [{ id: 18663 }];
+      const routeCollection: IRoute[] = [{ id: 29808 }];
       jest.spyOn(routeService, 'query').mockReturnValue(of(new HttpResponse({ body: routeCollection })));
       const additionalRoutes = [route];
       const expectedCollection: IRoute[] = [...additionalRoutes, ...routeCollection];
@@ -76,10 +76,10 @@ describe('RouteStop Management Update Component', () => {
 
     it('Should call Location query and add missing value', () => {
       const routeStop: IRouteStop = { id: 456 };
-      const location: ILocation = { id: 8353 };
+      const location: ILocation = { id: 15891 };
       routeStop.location = location;
 
-      const locationCollection: ILocation[] = [{ id: 8432 }];
+      const locationCollection: ILocation[] = [{ id: 3704 }];
       jest.spyOn(locationService, 'query').mockReturnValue(of(new HttpResponse({ body: locationCollection })));
       const additionalLocations = [location];
       const expectedCollection: ILocation[] = [...additionalLocations, ...locationCollection];
@@ -98,9 +98,9 @@ describe('RouteStop Management Update Component', () => {
 
     it('Should update editForm', () => {
       const routeStop: IRouteStop = { id: 456 };
-      const route: IRoute = { id: 30097 };
+      const route: IRoute = { id: 25131 };
       routeStop.route = route;
-      const location: ILocation = { id: 3389 };
+      const location: ILocation = { id: 27660 };
       routeStop.location = location;
 
       activatedRoute.data = of({ routeStop });

@@ -3,6 +3,7 @@
     "changelogDate": "20231214111710"
   },
   "applications": "*",
+  "changelogDate": "20231220113455",
   "entityTableName": "repair",
   "fields": [
     {

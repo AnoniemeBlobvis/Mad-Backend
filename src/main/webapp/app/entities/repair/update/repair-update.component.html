@@ -8,12 +8,10 @@
       <div>
         <jhi-alert-error></jhi-alert-error>
 
-        @if (editForm.controls.id.value !== null) {
-          <div class="mb-3">
-            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
-            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
-          </div>
-        }
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
 
         <div class="mb-3">
           <label class="form-label" jhiTranslate="autoMaatApp.repair.description" for="field_description">Description</label>
@@ -31,9 +29,9 @@
           <label class="form-label" jhiTranslate="autoMaatApp.repair.repairStatus" for="field_repairStatus">Repair Status</label>
           <select class="form-control" name="repairStatus" formControlName="repairStatus" id="field_repairStatus" data-cy="repairStatus">
             <option [ngValue]="null">{{ 'autoMaatApp.RepairStatus.null' | translate }}</option>
-            @for (repairStatus of repairStatusValues; track $index) {
-              <option [value]="repairStatus">{{ 'autoMaatApp.RepairStatus.' + repairStatus | translate }}</option>
-            }
+            <option *ngFor="let repairStatus of repairStatusValues" [value]="repairStatus">
+              {{ 'autoMaatApp.RepairStatus.' + repairStatus | translate }}
+            </option>
           </select>
         </div>
 
@@ -60,9 +58,7 @@
           <label class="form-label" jhiTranslate="autoMaatApp.repair.car" for="field_car">Car</label>
           <select class="form-control" id="field_car" data-cy="car" name="car" formControlName="car" [compareWith]="compareCar">
             <option [ngValue]="null"></option>
-            @for (carOption of carsSharedCollection; track $index) {
-              <option [ngValue]="carOption">{{ carOption.licensePlate }}</option>
-            }
+            <option [ngValue]="carOption" *ngFor="let carOption of carsSharedCollection">{{ carOption.licensePlate }}</option>
           </select>
         </div>
 
@@ -77,9 +73,9 @@
             [compareWith]="compareEmployee"
           >
             <option [ngValue]="null"></option>
-            @for (employeeOption of employeesSharedCollection; track $index) {
-              <option [ngValue]="employeeOption">{{ employeeOption.lastName }}</option>
-            }
+            <option [ngValue]="employeeOption" *ngFor="let employeeOption of employeesSharedCollection">
+              {{ employeeOption.lastName }}
+            </option>
           </select>
         </div>
 
@@ -94,9 +90,9 @@
             [compareWith]="compareInspection"
           >
             <option [ngValue]="null"></option>
-            @for (inspectionOption of inspectionsSharedCollection; track $index) {
-              <option [ngValue]="inspectionOption">{{ inspectionOption.id }}</option>
-            }
+            <option [ngValue]="inspectionOption" *ngFor="let inspectionOption of inspectionsSharedCollection">
+              {{ inspectionOption.id }}
+            </option>
           </select>
         </div>
       </div>

@@ -3,6 +3,7 @@
     "changelogDate": "20231214111210"
   },
   "applications": "*",
+  "changelogDate": "20231220113454",
   "entityTableName": "rental",
   "fields": [
     {

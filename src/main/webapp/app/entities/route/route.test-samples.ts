@@ -3,18 +3,21 @@ import dayjs from 'dayjs/esm';
 import { IRoute, NewRoute } from './route.model';
 
 export const sampleWithRequiredData: IRoute = {
-  id: 4856,
+  id: 177,
 };
 
 export const sampleWithPartialData: IRoute = {
-  id: 7915,
+  id: 32301,
+  code: 'that',
+  description: 'supposing while hovel',
+  date: dayjs('2023-12-19'),
 };
 
 export const sampleWithFullData: IRoute = {
-  id: 17385,
-  code: 'which last',
-  description: 'freely next zowie',
-  date: dayjs('2023-12-13'),
+  id: 3981,
+  code: 'revolutionise yellow',
+  description: 'gah sister canine',
+  date: dayjs('2023-12-20'),
 };
 
 export const sampleWithNewData: NewRoute = {

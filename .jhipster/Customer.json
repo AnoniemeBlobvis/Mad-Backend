@@ -3,6 +3,7 @@
     "changelogDate": "20231214111310"
   },
   "applications": "*",
+  "changelogDate": "20231220113449",
   "entityTableName": "customer",
   "fields": [
     {

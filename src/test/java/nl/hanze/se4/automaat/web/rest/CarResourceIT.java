@@ -350,11 +350,10 @@ class CarResourceIT {
         partialUpdatedCar.setId(car.getId());
 
         partialUpdatedCar
-            .fuel(UPDATED_FUEL)
+            .model(UPDATED_MODEL)
             .options(UPDATED_OPTIONS)
             .engineSize(UPDATED_ENGINE_SIZE)
             .price(UPDATED_PRICE)
-            .nrOfSeats(UPDATED_NR_OF_SEATS)
             .body(UPDATED_BODY);
 
         restCarMockMvc
@@ -370,15 +369,15 @@ class CarResourceIT {
         assertThat(carList).hasSize(databaseSizeBeforeUpdate);
         Car testCar = carList.get(carList.size() - 1);
         assertThat(testCar.getBrand()).isEqualTo(DEFAULT_BRAND);
-        assertThat(testCar.getModel()).isEqualTo(DEFAULT_MODEL);
-        assertThat(testCar.getFuel()).isEqualTo(UPDATED_FUEL);
+        assertThat(testCar.getModel()).isEqualTo(UPDATED_MODEL);
+        assertThat(testCar.getFuel()).isEqualTo(DEFAULT_FUEL);
         assertThat(testCar.getOptions()).isEqualTo(UPDATED_OPTIONS);
         assertThat(testCar.getLicensePlate()).isEqualTo(DEFAULT_LICENSE_PLATE);
         assertThat(testCar.getEngineSize()).isEqualTo(UPDATED_ENGINE_SIZE);
         assertThat(testCar.getModelYear()).isEqualTo(DEFAULT_MODEL_YEAR);
         assertThat(testCar.getSince()).isEqualTo(DEFAULT_SINCE);
         assertThat(testCar.getPrice()).isEqualTo(UPDATED_PRICE);
-        assertThat(testCar.getNrOfSeats()).isEqualTo(UPDATED_NR_OF_SEATS);
+        assertThat(testCar.getNrOfSeats()).isEqualTo(DEFAULT_NR_OF_SEATS);
         assertThat(testCar.getBody()).isEqualTo(UPDATED_BODY);
     }
 

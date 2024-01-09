@@ -58,10 +58,10 @@ describe('Inspection Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Car query and add missing value', () => {
       const inspection: IInspection = { id: 456 };
-      const car: ICar = { id: 2836 };
+      const car: ICar = { id: 30136 };
       inspection.car = car;
 
-      const carCollection: ICar[] = [{ id: 7220 }];
+      const carCollection: ICar[] = [{ id: 20897 }];
       jest.spyOn(carService, 'query').mockReturnValue(of(new HttpResponse({ body: carCollection })));
       const additionalCars = [car];
       const expectedCollection: ICar[] = [...additionalCars, ...carCollection];
@@ -77,10 +77,10 @@ describe('Inspection Management Update Component', () => {
 
     it('Should call Employee query and add missing value', () => {
       const inspection: IInspection = { id: 456 };
-      const employee: IEmployee = { id: 1773 };
+      const employee: IEmployee = { id: 3005 };
       inspection.employee = employee;
 
-      const employeeCollection: IEmployee[] = [{ id: 16417 }];
+      const employeeCollection: IEmployee[] = [{ id: 8893 }];
       jest.spyOn(employeeService, 'query').mockReturnValue(of(new HttpResponse({ body: employeeCollection })));
       const additionalEmployees = [employee];
       const expectedCollection: IEmployee[] = [...additionalEmployees, ...employeeCollection];
@@ -99,10 +99,10 @@ describe('Inspection Management Update Component', () => {
 
     it('Should call Rental query and add missing value', () => {
       const inspection: IInspection = { id: 456 };
-      const rental: IRental = { id: 2626 };
+      const rental: IRental = { id: 10455 };
       inspection.rental = rental;
 
-      const rentalCollection: IRental[] = [{ id: 14409 }];
+      const rentalCollection: IRental[] = [{ id: 8632 }];
       jest.spyOn(rentalService, 'query').mockReturnValue(of(new HttpResponse({ body: rentalCollection })));
       const additionalRentals = [rental];
       const expectedCollection: IRental[] = [...additionalRentals, ...rentalCollection];
@@ -121,11 +121,11 @@ describe('Inspection Management Update Component', () => {
 
     it('Should update editForm', () => {
       const inspection: IInspection = { id: 456 };
-      const car: ICar = { id: 15214 };
+      const car: ICar = { id: 6058 };
       inspection.car = car;
-      const employee: IEmployee = { id: 26232 };
+      const employee: IEmployee = { id: 11573 };
       inspection.employee = employee;
-      const rental: IRental = { id: 9413 };
+      const rental: IRental = { id: 5306 };
       inspection.rental = rental;
 
       activatedRoute.data = of({ inspection });

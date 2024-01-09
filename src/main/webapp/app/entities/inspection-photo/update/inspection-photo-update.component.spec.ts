@@ -50,10 +50,10 @@ describe('InspectionPhoto Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Inspection query and add missing value', () => {
       const inspectionPhoto: IInspectionPhoto = { id: 456 };
-      const inspection: IInspection = { id: 21759 };
+      const inspection: IInspection = { id: 15524 };
       inspectionPhoto.inspection = inspection;
 
-      const inspectionCollection: IInspection[] = [{ id: 13647 }];
+      const inspectionCollection: IInspection[] = [{ id: 22136 }];
       jest.spyOn(inspectionService, 'query').mockReturnValue(of(new HttpResponse({ body: inspectionCollection })));
       const additionalInspections = [inspection];
       const expectedCollection: IInspection[] = [...additionalInspections, ...inspectionCollection];
@@ -72,7 +72,7 @@ describe('InspectionPhoto Management Update Component', () => {
 
     it('Should update editForm', () => {
       const inspectionPhoto: IInspectionPhoto = { id: 456 };
-      const inspection: IInspection = { id: 8507 };
+      const inspection: IInspection = { id: 9496 };
       inspectionPhoto.inspection = inspection;
 
       activatedRoute.data = of({ inspectionPhoto });

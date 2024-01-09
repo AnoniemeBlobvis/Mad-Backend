@@ -3,6 +3,7 @@
     "changelogDate": "20231214112010"
   },
   "applications": "*",
+  "changelogDate": "20231220113457",
   "entityTableName": "route_stop",
   "fields": [
     {

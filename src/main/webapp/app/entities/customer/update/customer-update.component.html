@@ -8,12 +8,10 @@
       <div>
         <jhi-alert-error></jhi-alert-error>
 
-        @if (editForm.controls.id.value !== null) {
-          <div class="mb-3">
-            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
-            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
-          </div>
-        }
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
 
         <div class="mb-3">
           <label class="form-label" jhiTranslate="autoMaatApp.customer.nr" for="field_nr">Nr</label>
@@ -58,9 +56,7 @@
             [compareWith]="compareLocation"
           >
             <option [ngValue]="null"></option>
-            @for (locationOption of locationsSharedCollection; track $index) {
-              <option [ngValue]="locationOption">{{ locationOption.id }}</option>
-            }
+            <option [ngValue]="locationOption" *ngFor="let locationOption of locationsSharedCollection">{{ locationOption.id }}</option>
           </select>
         </div>
       </div>

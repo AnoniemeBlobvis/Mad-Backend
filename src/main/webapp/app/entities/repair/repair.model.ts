@@ -9,9 +9,9 @@ export interface IRepair {
   description?: string | null;
   repairStatus?: keyof typeof RepairStatus | null;
   dateCompleted?: dayjs.Dayjs | null;
-  car?: ICar | null;
-  employee?: IEmployee | null;
-  inspection?: IInspection | null;
+  car?: Pick<ICar, 'id' | 'licensePlate'> | null;
+  employee?: Pick<IEmployee, 'id' | 'lastName'> | null;
+  inspection?: Pick<IInspection, 'id'> | null;
 }
 
 export type NewRepair = Omit<IRepair, 'id'> & { id: null };

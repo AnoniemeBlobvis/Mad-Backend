@@ -3,31 +3,30 @@ import dayjs from 'dayjs/esm';
 import { ICar, NewCar } from './car.model';
 
 export const sampleWithRequiredData: ICar = {
-  id: 19080,
+  id: 12206,
 };
 
 export const sampleWithPartialData: ICar = {
-  id: 23074,
-  brand: 'whistle or masculinise',
-  model: 'er save',
-  options: 'when phew',
-  since: dayjs('2023-12-14'),
-  body: 'SEDAN',
+  id: 18652,
+  fuel: 'GASOLINE',
+  since: dayjs('2023-12-20'),
+  price: 166.08,
+  nrOfSeats: 12322,
 };
 
 export const sampleWithFullData: ICar = {
-  id: 31464,
-  brand: 'unto',
-  model: 'grab broadly',
+  id: 16274,
+  brand: 'or circa wherever',
+  model: 'chalk threaten assent',
   fuel: 'HYBRID',
-  options: 'molding while that',
-  licensePlate: 'reproachfully of',
-  engineSize: 14365,
-  modelYear: 5490,
-  since: dayjs('2023-12-13'),
-  price: 27445.95,
-  nrOfSeats: 24481,
-  body: 'SUV',
+  options: 'damage',
+  licensePlate: 'or place',
+  engineSize: 17407,
+  modelYear: 26127,
+  since: dayjs('2023-12-20'),
+  price: 430.48,
+  nrOfSeats: 5968,
+  body: 'SEDAN',
 };
 
 export const sampleWithNewData: NewCar = {

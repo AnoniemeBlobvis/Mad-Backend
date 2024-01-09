@@ -3,20 +3,23 @@ import dayjs from 'dayjs/esm';
 import { IEmployee, NewEmployee } from './employee.model';
 
 export const sampleWithRequiredData: IEmployee = {
-  id: 14863,
+  id: 14888,
 };
 
 export const sampleWithPartialData: IEmployee = {
-  id: 22409,
-  from: dayjs('2023-12-13'),
+  id: 9741,
+  nr: 10013,
+  lastName: 'Wiegand',
+  firstName: 'Hector',
+  from: dayjs('2023-12-20'),
 };
 
 export const sampleWithFullData: IEmployee = {
-  id: 9384,
-  nr: 31725,
-  lastName: 'Rohan',
-  firstName: 'Shany',
-  from: dayjs('2023-12-14'),
+  id: 23035,
+  nr: 2789,
+  lastName: 'McLaughlin',
+  firstName: 'Blanche',
+  from: dayjs('2023-12-19'),
 };
 
 export const sampleWithNewData: NewEmployee = {

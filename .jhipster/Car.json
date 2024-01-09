@@ -3,6 +3,7 @@
     "changelogDate": "20231214111110"
   },
   "applications": "*",
+  "changelogDate": "20231220113448",
   "entityTableName": "car",
   "fields": [
     {

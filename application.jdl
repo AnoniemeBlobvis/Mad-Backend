@@ -8,7 +8,7 @@ application {
     clientFramework angularX
     clientPackageManager npm
     databaseType sql
-    prodDatabaseType mysql
+    prodDatabaseType postgresql
     devDatabaseType h2Memory
     languages [en, nl]
     packageName nl.hanze.se4.automaat

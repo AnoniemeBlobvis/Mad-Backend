@@ -288,6 +288,8 @@ class RouteResourceIT {
         Route partialUpdatedRoute = new Route();
         partialUpdatedRoute.setId(route.getId());
 
+        partialUpdatedRoute.description(UPDATED_DESCRIPTION).date(UPDATED_DATE);
+
         restRouteMockMvc
             .perform(
                 patch(ENTITY_API_URL_ID, partialUpdatedRoute.getId())
@@ -301,8 +303,8 @@ class RouteResourceIT {
         assertThat(routeList).hasSize(databaseSizeBeforeUpdate);
         Route testRoute = routeList.get(routeList.size() - 1);
         assertThat(testRoute.getCode()).isEqualTo(DEFAULT_CODE);
-        assertThat(testRoute.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
-        assertThat(testRoute.getDate()).isEqualTo(DEFAULT_DATE);
+        assertThat(testRoute.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
+        assertThat(testRoute.getDate()).isEqualTo(UPDATED_DATE);
     }
 
     @Test

@@ -18,7 +18,7 @@
         <maven.version>3.2.5</maven.version>
         <java.version>17</java.version>
         <node.version>v18.18.2</node.version>
-        <npm.version>10.2.4</npm.version>
+        <npm.version>10.2.2</npm.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
@@ -28,15 +28,15 @@
         <argLine>-Djava.security.egd=file:/dev/./urandom -Xmx1G</argLine>
         <m2e.apt.activation>jdt_apt</m2e.apt.activation>
         <run.addResources>false</run.addResources>
-        <jhipster-dependencies.version>8.1.0</jhipster-dependencies.version>
-        <spring-boot.version>3.2.0</spring-boot.version>
-        <archunit-junit5.version>1.2.1</archunit-junit5.version>
-        <checkstyle.version>10.12.5</checkstyle.version>
+        <jhipster-dependencies.version>8.0.0</jhipster-dependencies.version>
+        <spring-boot.version>3.1.5</spring-boot.version>
+        <archunit-junit5.version>1.1.0</archunit-junit5.version>
+        <checkstyle.version>10.12.4</checkstyle.version>
         <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
-        <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
+        <frontend-maven-plugin.version>1.14.2</frontend-maven-plugin.version>
         <git-commit-id-maven-plugin.version>7.0.0</git-commit-id-maven-plugin.version>
         <h2.version>2.2.224</h2.version>
-        <hibernate.version>6.3.1.Final</hibernate.version>
+        <hibernate.version>6.2.13.Final</hibernate.version>
         <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
         <jaxb-runtime.version>4.0.4</jaxb-runtime.version>
         <jib-maven-plugin.architecture>amd64</jib-maven-plugin.architecture>
@@ -56,13 +56,13 @@
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-eclipse-plugin.version>2.1</maven-eclipse-plugin.version>
         <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
-        <maven-failsafe-plugin.version>3.2.2</maven-failsafe-plugin.version>
+        <maven-failsafe-plugin.version>3.2.1</maven-failsafe-plugin.version>
         <maven-idea-plugin.version>2.2.1</maven-idea-plugin.version>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
-        <maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.6.0</maven-javadoc-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
         <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
-        <maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.2.1</maven-surefire-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
         <modernizer-maven-plugin.version>2.7.0</modernizer-maven-plugin.version>
         <nohttp-checkstyle.version>0.0.11</nohttp-checkstyle.version>
@@ -73,7 +73,7 @@
         <profile.tls/>
         <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
         <sonar-maven-plugin.version>3.10.0.2594</sonar-maven-plugin.version>
-        <spotless-maven-plugin.version>2.41.1</spotless-maven-plugin.version>
+        <spotless-maven-plugin.version>2.40.0</spotless-maven-plugin.version>
         <validation-api.version>3.0.2</validation-api.version>
     </properties>
 
@@ -249,13 +249,8 @@
         </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
-            <artifactId>mysql</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.7.1</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -485,7 +480,6 @@
                     <configuration>
                         <source>${java.version}</source>
                         <target>${java.version}</target>
-                        <parameters>true</parameters>
                         <annotationProcessorPaths>
                             <path>
                                 <groupId>org.springframework.boot</groupId>
@@ -847,7 +841,7 @@
                         <artifactId>maven-compiler-plugin</artifactId>
                         <configuration>
                             <testExcludes>
-                                <testExclude>nl/hanze/se4/automaat/config/MysqlTestContainer.java</testExclude>
+                                <testExclude>nl/hanze/se4/automaat/config/PostgreSqlTestContainer.java</testExclude>
                             </testExcludes>
                         </configuration>
                     </plugin>
@@ -950,10 +944,10 @@
                 <!-- default Spring profiles -->
                 <spring.profiles.active>prod${profile.api-docs}${profile.tls}${profile.e2e}${profile.no-liquibase}</spring.profiles.active>
                 <profile.test>testprod</profile.test>
-                <liquibase-plugin.hibernate-dialect>org.hibernate.dialect.MySQL8Dialect</liquibase-plugin.hibernate-dialect>
-                <liquibase-plugin.driver>com.mysql.cj.jdbc.Driver</liquibase-plugin.driver>
-                <liquibase-plugin.url>jdbc:mysql://localhost:3306/AutoMaat</liquibase-plugin.url>
-                <liquibase-plugin.username>root</liquibase-plugin.username>
+                <liquibase-plugin.hibernate-dialect>org.hibernate.dialect.PostgreSQLDialect</liquibase-plugin.hibernate-dialect>
+                <liquibase-plugin.driver>org.postgresql.Driver</liquibase-plugin.driver>
+                <liquibase-plugin.url>jdbc:postgresql://localhost:5432/AutoMaat</liquibase-plugin.url>
+                <liquibase-plugin.username>AutoMaat</liquibase-plugin.username>
                 <liquibase-plugin.password/>
             </properties>
             <build>
@@ -1031,8 +1025,8 @@
             </build>
             <dependencies>
                 <dependency>
-                    <groupId>com.mysql</groupId>
-                    <artifactId>mysql-connector-j</artifactId>
+                    <groupId>org.postgresql</groupId>
+                    <artifactId>postgresql</artifactId>
                 </dependency>
             </dependencies>
         </profile>
@@ -1176,46 +1170,6 @@
                 <!-- default Spring profiles -->
                 <spring.profiles.active>dev${profile.no-liquibase}</spring.profiles.active>
             </properties>
-        </profile>
-        <profile>
-            <id>azure</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <!-- default Spring profiles -->
-                <spring.profiles.active>dev${profile.tls}${profile.no-liquibase}</spring.profiles.active>
-                <profile.test>testdev</profile.test>
-                <liquibase-plugin.hibernate-dialect>org.hibernate.dialect.H2Dialect</liquibase-plugin.hibernate-dialect>
-                <liquibase-plugin.driver>org.h2.Driver</liquibase-plugin.driver>
-                <liquibase-plugin.url>jdbc:h2:tcp://localhost:18080/mem:AutoMaat</liquibase-plugin.url>
-                <liquibase-plugin.username>AutoMaat</liquibase-plugin.username>
-                <liquibase-plugin.password/>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-devtools</artifactId>
-                    <optional>true</optional>
-                </dependency>
-                <dependency>
-                    <groupId>com.h2database</groupId>
-                    <artifactId>h2</artifactId>
-                </dependency>
-            </dependencies>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <configuration>
-                            <testExcludes>
-                                <testExclude>nl/hanze/se4/automaat/config/MysqlTestContainer.java</testExclude>
-                            </testExcludes>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
     </profiles>
 </project>

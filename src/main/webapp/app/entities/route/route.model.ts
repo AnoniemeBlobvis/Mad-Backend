@@ -1,5 +1,4 @@
 import dayjs from 'dayjs/esm';
-import { IRouteStop } from 'app/entities/route-stop/route-stop.model';
 import { IEmployee } from 'app/entities/employee/employee.model';
 
 export interface IRoute {
@@ -7,8 +6,7 @@ export interface IRoute {
   code?: string | null;
   description?: string | null;
   date?: dayjs.Dayjs | null;
-  routeStops?: IRouteStop[] | null;
-  employee?: IEmployee | null;
+  employee?: Pick<IEmployee, 'id' | 'lastName'> | null;
 }
 
 export type NewRoute = Omit<IRoute, 'id'> & { id: null };
