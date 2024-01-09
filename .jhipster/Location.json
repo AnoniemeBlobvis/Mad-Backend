@@ -1,9 +1,6 @@
 {
-  "annotations": {
-    "changelogDate": "20231214111810"
-  },
   "applications": "*",
-  "changelogDate": "20231220113453",
+  "changelogDate": "20240109190838",
   "entityTableName": "location",
   "fields": [
     {

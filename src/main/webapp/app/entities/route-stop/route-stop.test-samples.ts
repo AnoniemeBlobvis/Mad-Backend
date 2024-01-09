@@ -1,17 +1,16 @@
 import { IRouteStop, NewRouteStop } from './route-stop.model';
 
 export const sampleWithRequiredData: IRouteStop = {
-  id: 15968,
+  id: 4473,
 };
 
 export const sampleWithPartialData: IRouteStop = {
-  id: 31684,
-  nr: 8129,
+  id: 23157,
 };
 
 export const sampleWithFullData: IRouteStop = {
-  id: 25210,
-  nr: 20007,
+  id: 4041,
+  nr: 13343,
 };
 
 export const sampleWithNewData: NewRouteStop = {

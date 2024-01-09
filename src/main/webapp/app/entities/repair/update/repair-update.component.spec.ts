@@ -58,10 +58,10 @@ describe('Repair Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Car query and add missing value', () => {
       const repair: IRepair = { id: 456 };
-      const car: ICar = { id: 31310 };
+      const car: ICar = { id: 5375 };
       repair.car = car;
 
-      const carCollection: ICar[] = [{ id: 30311 }];
+      const carCollection: ICar[] = [{ id: 12428 }];
       jest.spyOn(carService, 'query').mockReturnValue(of(new HttpResponse({ body: carCollection })));
       const additionalCars = [car];
       const expectedCollection: ICar[] = [...additionalCars, ...carCollection];
@@ -77,10 +77,10 @@ describe('Repair Management Update Component', () => {
 
     it('Should call Employee query and add missing value', () => {
       const repair: IRepair = { id: 456 };
-      const employee: IEmployee = { id: 11779 };
+      const employee: IEmployee = { id: 13722 };
       repair.employee = employee;
 
-      const employeeCollection: IEmployee[] = [{ id: 13709 }];
+      const employeeCollection: IEmployee[] = [{ id: 19144 }];
       jest.spyOn(employeeService, 'query').mockReturnValue(of(new HttpResponse({ body: employeeCollection })));
       const additionalEmployees = [employee];
       const expectedCollection: IEmployee[] = [...additionalEmployees, ...employeeCollection];
@@ -99,10 +99,10 @@ describe('Repair Management Update Component', () => {
 
     it('Should call Inspection query and add missing value', () => {
       const repair: IRepair = { id: 456 };
-      const inspection: IInspection = { id: 17501 };
+      const inspection: IInspection = { id: 21556 };
       repair.inspection = inspection;
 
-      const inspectionCollection: IInspection[] = [{ id: 20321 }];
+      const inspectionCollection: IInspection[] = [{ id: 14607 }];
       jest.spyOn(inspectionService, 'query').mockReturnValue(of(new HttpResponse({ body: inspectionCollection })));
       const additionalInspections = [inspection];
       const expectedCollection: IInspection[] = [...additionalInspections, ...inspectionCollection];
@@ -121,11 +121,11 @@ describe('Repair Management Update Component', () => {
 
     it('Should update editForm', () => {
       const repair: IRepair = { id: 456 };
-      const car: ICar = { id: 12443 };
+      const car: ICar = { id: 15663 };
       repair.car = car;
-      const employee: IEmployee = { id: 19426 };
+      const employee: IEmployee = { id: 336 };
       repair.employee = employee;
-      const inspection: IInspection = { id: 16464 };
+      const inspection: IInspection = { id: 27081 };
       repair.inspection = inspection;
 
       activatedRoute.data = of({ repair });

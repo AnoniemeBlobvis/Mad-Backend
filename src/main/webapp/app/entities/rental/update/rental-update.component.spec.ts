@@ -54,10 +54,10 @@ describe('Rental Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Customer query and add missing value', () => {
       const rental: IRental = { id: 456 };
-      const customer: ICustomer = { id: 1801 };
+      const customer: ICustomer = { id: 8753 };
       rental.customer = customer;
 
-      const customerCollection: ICustomer[] = [{ id: 27335 }];
+      const customerCollection: ICustomer[] = [{ id: 25451 }];
       jest.spyOn(customerService, 'query').mockReturnValue(of(new HttpResponse({ body: customerCollection })));
       const additionalCustomers = [customer];
       const expectedCollection: ICustomer[] = [...additionalCustomers, ...customerCollection];
@@ -76,10 +76,10 @@ describe('Rental Management Update Component', () => {
 
     it('Should call Car query and add missing value', () => {
       const rental: IRental = { id: 456 };
-      const car: ICar = { id: 1241 };
+      const car: ICar = { id: 22905 };
       rental.car = car;
 
-      const carCollection: ICar[] = [{ id: 20120 }];
+      const carCollection: ICar[] = [{ id: 18937 }];
       jest.spyOn(carService, 'query').mockReturnValue(of(new HttpResponse({ body: carCollection })));
       const additionalCars = [car];
       const expectedCollection: ICar[] = [...additionalCars, ...carCollection];
@@ -95,9 +95,9 @@ describe('Rental Management Update Component', () => {
 
     it('Should update editForm', () => {
       const rental: IRental = { id: 456 };
-      const customer: ICustomer = { id: 8272 };
+      const customer: ICustomer = { id: 2984 };
       rental.customer = customer;
-      const car: ICar = { id: 839 };
+      const car: ICar = { id: 32162 };
       rental.car = car;
 
       activatedRoute.data = of({ rental });

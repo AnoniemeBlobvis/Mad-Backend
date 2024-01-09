@@ -330,7 +330,7 @@ class InspectionResourceIT {
         Inspection partialUpdatedInspection = new Inspection();
         partialUpdatedInspection.setId(inspection.getId());
 
-        partialUpdatedInspection.odometer(UPDATED_ODOMETER).result(UPDATED_RESULT);
+        partialUpdatedInspection.code(UPDATED_CODE).odometer(UPDATED_ODOMETER).result(UPDATED_RESULT);
 
         restInspectionMockMvc
             .perform(
@@ -344,7 +344,7 @@ class InspectionResourceIT {
         List<Inspection> inspectionList = inspectionRepository.findAll();
         assertThat(inspectionList).hasSize(databaseSizeBeforeUpdate);
         Inspection testInspection = inspectionList.get(inspectionList.size() - 1);
-        assertThat(testInspection.getCode()).isEqualTo(DEFAULT_CODE);
+        assertThat(testInspection.getCode()).isEqualTo(UPDATED_CODE);
         assertThat(testInspection.getOdometer()).isEqualTo(UPDATED_ODOMETER);
         assertThat(testInspection.getResult()).isEqualTo(UPDATED_RESULT);
         assertThat(testInspection.getPhoto()).isEqualTo(DEFAULT_PHOTO);

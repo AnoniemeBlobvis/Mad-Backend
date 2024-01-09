@@ -244,6 +244,8 @@ class RouteStopResourceIT {
         RouteStop partialUpdatedRouteStop = new RouteStop();
         partialUpdatedRouteStop.setId(routeStop.getId());
 
+        partialUpdatedRouteStop.nr(UPDATED_NR);
+
         restRouteStopMockMvc
             .perform(
                 patch(ENTITY_API_URL_ID, partialUpdatedRouteStop.getId())
@@ -256,7 +258,7 @@ class RouteStopResourceIT {
         List<RouteStop> routeStopList = routeStopRepository.findAll();
         assertThat(routeStopList).hasSize(databaseSizeBeforeUpdate);
         RouteStop testRouteStop = routeStopList.get(routeStopList.size() - 1);
-        assertThat(testRouteStop.getNr()).isEqualTo(DEFAULT_NR);
+        assertThat(testRouteStop.getNr()).isEqualTo(UPDATED_NR);
     }
 
     @Test

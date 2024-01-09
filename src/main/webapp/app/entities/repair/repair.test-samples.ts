@@ -3,19 +3,19 @@ import dayjs from 'dayjs/esm';
 import { IRepair, NewRepair } from './repair.model';
 
 export const sampleWithRequiredData: IRepair = {
-  id: 2586,
+  id: 13372,
 };
 
 export const sampleWithPartialData: IRepair = {
-  id: 30077,
-  dateCompleted: dayjs('2023-12-19'),
+  id: 6236,
+  repairStatus: 'CANCELLED',
 };
 
 export const sampleWithFullData: IRepair = {
-  id: 30747,
-  description: 'noisily',
-  repairStatus: 'PLANNED',
-  dateCompleted: dayjs('2023-12-20'),
+  id: 30053,
+  description: 'unimpressively',
+  repairStatus: 'DOING',
+  dateCompleted: dayjs('2024-01-09'),
 };
 
 export const sampleWithNewData: NewRepair = {

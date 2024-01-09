@@ -50,10 +50,10 @@ describe('Customer Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Location query and add missing value', () => {
       const customer: ICustomer = { id: 456 };
-      const location: ILocation = { id: 2599 };
+      const location: ILocation = { id: 4116 };
       customer.location = location;
 
-      const locationCollection: ILocation[] = [{ id: 20553 }];
+      const locationCollection: ILocation[] = [{ id: 26310 }];
       jest.spyOn(locationService, 'query').mockReturnValue(of(new HttpResponse({ body: locationCollection })));
       const additionalLocations = [location];
       const expectedCollection: ILocation[] = [...additionalLocations, ...locationCollection];
@@ -72,7 +72,7 @@ describe('Customer Management Update Component', () => {
 
     it('Should update editForm', () => {
       const customer: ICustomer = { id: 456 };
-      const location: ILocation = { id: 31104 };
+      const location: ILocation = { id: 9864 };
       customer.location = location;
 
       activatedRoute.data = of({ customer });

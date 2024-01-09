@@ -267,7 +267,7 @@ class EmployeeResourceIT {
         Employee partialUpdatedEmployee = new Employee();
         partialUpdatedEmployee.setId(employee.getId());
 
-        partialUpdatedEmployee.lastName(UPDATED_LAST_NAME).firstName(UPDATED_FIRST_NAME);
+        partialUpdatedEmployee.firstName(UPDATED_FIRST_NAME);
 
         restEmployeeMockMvc
             .perform(
@@ -282,7 +282,7 @@ class EmployeeResourceIT {
         assertThat(employeeList).hasSize(databaseSizeBeforeUpdate);
         Employee testEmployee = employeeList.get(employeeList.size() - 1);
         assertThat(testEmployee.getNr()).isEqualTo(DEFAULT_NR);
-        assertThat(testEmployee.getLastName()).isEqualTo(UPDATED_LAST_NAME);
+        assertThat(testEmployee.getLastName()).isEqualTo(DEFAULT_LAST_NAME);
         assertThat(testEmployee.getFirstName()).isEqualTo(UPDATED_FIRST_NAME);
         assertThat(testEmployee.getFrom()).isEqualTo(DEFAULT_FROM);
     }

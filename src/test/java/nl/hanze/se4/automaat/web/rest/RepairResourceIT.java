@@ -295,6 +295,8 @@ class RepairResourceIT {
         Repair partialUpdatedRepair = new Repair();
         partialUpdatedRepair.setId(repair.getId());
 
+        partialUpdatedRepair.description(UPDATED_DESCRIPTION).repairStatus(UPDATED_REPAIR_STATUS);
+
         restRepairMockMvc
             .perform(
                 patch(ENTITY_API_URL_ID, partialUpdatedRepair.getId())
@@ -307,8 +309,8 @@ class RepairResourceIT {
         List<Repair> repairList = repairRepository.findAll();
         assertThat(repairList).hasSize(databaseSizeBeforeUpdate);
         Repair testRepair = repairList.get(repairList.size() - 1);
-        assertThat(testRepair.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
-        assertThat(testRepair.getRepairStatus()).isEqualTo(DEFAULT_REPAIR_STATUS);
+        assertThat(testRepair.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
+        assertThat(testRepair.getRepairStatus()).isEqualTo(UPDATED_REPAIR_STATUS);
         assertThat(testRepair.getDateCompleted()).isEqualTo(DEFAULT_DATE_COMPLETED);
     }
 

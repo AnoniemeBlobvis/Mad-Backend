@@ -328,7 +328,7 @@ class RentalResourceIT {
         Rental partialUpdatedRental = new Rental();
         partialUpdatedRental.setId(rental.getId());
 
-        partialUpdatedRental.code(UPDATED_CODE).longitude(UPDATED_LONGITUDE).toDate(UPDATED_TO_DATE);
+        partialUpdatedRental.latitude(UPDATED_LATITUDE).state(UPDATED_STATE);
 
         restRentalMockMvc
             .perform(
@@ -342,12 +342,12 @@ class RentalResourceIT {
         List<Rental> rentalList = rentalRepository.findAll();
         assertThat(rentalList).hasSize(databaseSizeBeforeUpdate);
         Rental testRental = rentalList.get(rentalList.size() - 1);
-        assertThat(testRental.getCode()).isEqualTo(UPDATED_CODE);
-        assertThat(testRental.getLongitude()).isEqualTo(UPDATED_LONGITUDE);
-        assertThat(testRental.getLatitude()).isEqualTo(DEFAULT_LATITUDE);
+        assertThat(testRental.getCode()).isEqualTo(DEFAULT_CODE);
+        assertThat(testRental.getLongitude()).isEqualTo(DEFAULT_LONGITUDE);
+        assertThat(testRental.getLatitude()).isEqualTo(UPDATED_LATITUDE);
         assertThat(testRental.getFromDate()).isEqualTo(DEFAULT_FROM_DATE);
-        assertThat(testRental.getToDate()).isEqualTo(UPDATED_TO_DATE);
-        assertThat(testRental.getState()).isEqualTo(DEFAULT_STATE);
+        assertThat(testRental.getToDate()).isEqualTo(DEFAULT_TO_DATE);
+        assertThat(testRental.getState()).isEqualTo(UPDATED_STATE);
     }
 
     @Test

@@ -1,9 +1,6 @@
 {
-  "annotations": {
-    "changelogDate": "20231214111610"
-  },
   "applications": "*",
-  "changelogDate": "20231220113452",
+  "changelogDate": "20240109190638",
   "entityTableName": "inspection_photo",
   "fields": [
     {

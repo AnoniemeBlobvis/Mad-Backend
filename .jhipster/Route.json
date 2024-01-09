@@ -1,9 +1,6 @@
 {
-  "annotations": {
-    "changelogDate": "20231214111910"
-  },
   "applications": "*",
-  "changelogDate": "20231220113456",
+  "changelogDate": "20240109190938",
   "entityTableName": "route",
   "fields": [
     {

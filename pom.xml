@@ -252,6 +252,12 @@
             <artifactId>postgresql</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.8.0</version> <!-- Use the latest version available -->
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -1170,6 +1176,46 @@
                 <!-- default Spring profiles -->
                 <spring.profiles.active>dev${profile.no-liquibase}</spring.profiles.active>
             </properties>
+        </profile>
+        <profile>
+            <id>azure</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- default Spring profiles -->
+                <spring.profiles.active>dev${profile.tls}${profile.no-liquibase}</spring.profiles.active>
+                <profile.test>testdev</profile.test>
+                <liquibase-plugin.hibernate-dialect>org.hibernate.dialect.H2Dialect</liquibase-plugin.hibernate-dialect>
+                <liquibase-plugin.driver>org.h2.Driver</liquibase-plugin.driver>
+                <liquibase-plugin.url>jdbc:h2:tcp://localhost:18080/mem:AutoMaat</liquibase-plugin.url>
+                <liquibase-plugin.username>AutoMaat</liquibase-plugin.username>
+                <liquibase-plugin.password/>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-devtools</artifactId>
+                    <optional>true</optional>
+                </dependency>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <testExcludes>
+                                <testExclude>nl/hanze/se4/automaat/config/MysqlTestContainer.java</testExclude>
+                            </testExcludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 </project>

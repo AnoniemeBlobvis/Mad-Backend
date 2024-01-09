@@ -1,9 +1,6 @@
 {
-  "annotations": {
-    "changelogDate": "20231214111710"
-  },
   "applications": "*",
-  "changelogDate": "20231220113455",
+  "changelogDate": "20240109190738",
   "entityTableName": "repair",
   "fields": [
     {

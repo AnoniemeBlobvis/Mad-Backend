@@ -267,7 +267,7 @@ class CustomerResourceIT {
         Customer partialUpdatedCustomer = new Customer();
         partialUpdatedCustomer.setId(customer.getId());
 
-        partialUpdatedCustomer.firstName(UPDATED_FIRST_NAME).from(UPDATED_FROM);
+        partialUpdatedCustomer.lastName(UPDATED_LAST_NAME).firstName(UPDATED_FIRST_NAME);
 
         restCustomerMockMvc
             .perform(
@@ -282,9 +282,9 @@ class CustomerResourceIT {
         assertThat(customerList).hasSize(databaseSizeBeforeUpdate);
         Customer testCustomer = customerList.get(customerList.size() - 1);
         assertThat(testCustomer.getNr()).isEqualTo(DEFAULT_NR);
-        assertThat(testCustomer.getLastName()).isEqualTo(DEFAULT_LAST_NAME);
+        assertThat(testCustomer.getLastName()).isEqualTo(UPDATED_LAST_NAME);
         assertThat(testCustomer.getFirstName()).isEqualTo(UPDATED_FIRST_NAME);
-        assertThat(testCustomer.getFrom()).isEqualTo(UPDATED_FROM);
+        assertThat(testCustomer.getFrom()).isEqualTo(DEFAULT_FROM);
     }
 
     @Test

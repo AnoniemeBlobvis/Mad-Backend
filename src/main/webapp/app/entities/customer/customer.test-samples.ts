@@ -3,21 +3,21 @@ import dayjs from 'dayjs/esm';
 import { ICustomer, NewCustomer } from './customer.model';
 
 export const sampleWithRequiredData: ICustomer = {
-  id: 16029,
+  id: 32686,
 };
 
 export const sampleWithPartialData: ICustomer = {
-  id: 246,
-  lastName: 'Gutkowski',
-  firstName: 'Jimmy',
+  id: 5294,
+  nr: 20428,
+  from: dayjs('2024-01-09'),
 };
 
 export const sampleWithFullData: ICustomer = {
-  id: 18986,
-  nr: 23362,
-  lastName: 'Auer',
-  firstName: 'Maggie',
-  from: dayjs('2023-12-20'),
+  id: 29155,
+  nr: 25789,
+  lastName: 'Bergstrom',
+  firstName: 'Precious',
+  from: dayjs('2024-01-09'),
 };
 
 export const sampleWithNewData: NewCustomer = {
